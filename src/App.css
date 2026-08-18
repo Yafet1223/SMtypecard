@@ -1,0 +1,327 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color: #182033;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f5f7fb;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 183, 77, 0.25), transparent 32rem),
+    linear-gradient(135deg, #f7fbff 0%, #f3f5f9 42%, #fff7f0 100%);
+}
+
+.hero {
+  min-height: 390px;
+  padding: 28px clamp(18px, 4vw, 64px) 110px;
+  color: #ffffff;
+  background:
+    linear-gradient(115deg, rgba(10, 17, 34, 0.9), rgba(22, 96, 116, 0.72)),
+    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+}
+
+.topbar,
+.hero-content,
+.profile-board {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.topbar button,
+.card-footer button,
+.upload-button {
+  min-height: 42px;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.topbar button {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.topbar .primary-action,
+.card-footer button {
+  color: #102236;
+  background: #ffd166;
+  box-shadow: 0 12px 30px rgba(255, 209, 102, 0.32);
+}
+
+.topbar button:hover,
+.card-footer button:hover,
+.upload-button:hover {
+  transform: translateY(-2px);
+}
+
+.hero-content {
+  padding-top: 72px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.eyebrow,
+.user-id {
+  margin: 0;
+  color: #36d6b7;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 12px 0 16px;
+  font-size: clamp(2.35rem, 6vw, 4.9rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-content > p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.profile-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0 clamp(18px, 4vw, 64px) 54px;
+  margin-top: -70px;
+}
+
+.user-card {
+  overflow: hidden;
+  border: 1px solid rgba(24, 32, 51, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 70px rgba(28, 41, 69, 0.14);
+  backdrop-filter: blur(18px);
+}
+
+.cover-photo {
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+}
+
+.profile-pic-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 24px;
+  margin-top: -48px;
+}
+
+.profile-pic {
+  width: 112px;
+  height: 112px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #edf2f7;
+  box-shadow: 0 16px 35px rgba(28, 41, 69, 0.22);
+}
+
+.upload-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: #ffffff;
+  background: #2563eb;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24);
+}
+
+.upload-button input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.profile-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px 0;
+}
+
+.profile-info h2 {
+  margin: 4px 0 2px;
+  color: #111827;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  letter-spacing: 0;
+}
+
+.username {
+  margin: 0;
+  color: #5b6475;
+  font-weight: 700;
+}
+
+.status-badge {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 7px 11px;
+  color: #047857;
+  background: #dff8ed;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.bio {
+  min-height: 54px;
+  margin: 18px 24px 0;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 22px 24px;
+}
+
+.stats-grid div {
+  min-height: 78px;
+  border: 1px solid #e8edf5;
+  border-radius: 8px;
+  padding: 13px;
+  background: #f9fbff;
+}
+
+.stats-grid strong,
+.stats-grid span {
+  display: block;
+}
+
+.stats-grid strong {
+  overflow: hidden;
+  color: #172033;
+  font-size: 1.15rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stats-grid span {
+  margin-top: 4px;
+  color: #667085;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid #eef2f7;
+  padding: 18px 24px 24px;
+}
+
+.card-footer a {
+  overflow-wrap: anywhere;
+  color: #2563eb;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.card-footer button {
+  min-width: 96px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-bottom: 92px;
+  }
+
+  .topbar,
+  .topbar-actions,
+  .card-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .topbar-actions {
+    width: 100%;
+  }
+
+  .hero-content {
+    padding-top: 48px;
+    text-align: left;
+  }
+
+  .profile-board {
+    grid-template-columns: 1fr;
+    margin-top: -52px;
+  }
+
+  .profile-pic-section {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .upload-button {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
